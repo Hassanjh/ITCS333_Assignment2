@@ -13,6 +13,13 @@ if (!$data || !isset($data['records'])) {
     die("Error: Unable to retrieve data from the API.");
 }
 
-$records = $data['records'] ?? [];
+$records = $data['records'];
+
+//Display records
+foreach ($records as $record) { 
+    echo "ID: " . $record['record']['id'] . "<br>";
+    echo "College: " . $record['record']['colleges'] . "<br>";
+    echo "Program: " . $record['record']['the_programs'] . "<br>";
+}
 ?>
 
