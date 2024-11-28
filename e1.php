@@ -17,9 +17,12 @@ $records = $data['records'];
 
 //Display records
 foreach ($records as $record) { 
-    echo "ID: " . $record['record']['id'] . "<br>";
-    echo "College: " . $record['record']['colleges'] . "<br>";
-    echo "Program: " . $record['record']['the_programs'] . "<br>";
+    echo "Year: " . $record['record']['year'] . "<br>";
+    echo "Semester: " . $record['record']['semester'] . "<br>";
+    echo "Programs: " . $record['record']['programs'] . "<br>";
+    echo "Nationality: " . $record['record']['nationality'] . "<br>";
+    echo "Colleges: " . $record['record']['colleges'] . "<br>";
+    echo "Number of students: " . $record['record']['number of students'] . "<br>";
 }
 ?>
 
