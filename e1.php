@@ -9,11 +9,11 @@ $response = file_get_contents($url);
 $data = json_decode($response, true);
 
 // Check if data retrieval was successful
-if (!$data || !isset($data['records'])) {
+if (!$data || !isset($data['results'])) {
     die("Error: Unable to retrieve data from the API.");
 }
 
-$records = $data['records'];
+$records = $data['results'] ?? [];
 
 //Display records
 foreach ($records as $record) { 
