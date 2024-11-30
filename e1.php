@@ -14,15 +14,48 @@ if (!$data || !isset($data['results'])) {
 }
 
 $records = $data['results'] ?? [];
-
-//Display records
-foreach ($records as $record) { 
-    echo "Year: " . $record['record']['year'] . "<br>";
-    echo "Semester: " . $record['record']['semester'] . "<br>";
-    echo "Programs: " . $record['record']['programs'] . "<br>";
-    echo "Nationality: " . $record['record']['nationality'] . "<br>";
-    echo "Colleges: " . $record['record']['colleges'] . "<br>";
-    echo "Number of students: " . $record['record']['number of students'] . "<br>";
-}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    <title>UOB Student Enrollment Data</title>
+</head>
+<body>
+    <main class="container">
+        <h1>University of Bahrain - Student Enrollment Data</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Semester</th>
+                    <th>Programs</th>
+                    <th>Nationality</th>
+                    <th>College</th>
+                    <th>Number of Students</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Loop through the data to display rows
+                foreach ($records as $record) {
+
+                    echo "<tr>
+                        <td>{$record['year']}</td>
+                        <td>{$record['semester']}</td>
+                        <td>{$record['the_programs']}</td>
+                        <td>{$record['nationality']}</td>
+                        <td>{$record['colleges']}</td>
+                        <td>{$record['number_of_students']}</td>
+                    </tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
 
